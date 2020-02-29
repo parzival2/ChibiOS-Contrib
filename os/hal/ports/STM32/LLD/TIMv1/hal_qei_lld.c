@@ -198,7 +198,7 @@ void qei_lld_start(QEIDriver *qeip) {
   qeip->tim->CR2  = 0;
   qeip->tim->PSC  = 0;
   qeip->tim->DIER = 0;
-  qeip->tim->ARR  = 0xFFFF;
+  qeip->tim->ARR  = qeip->config->max;
 
   /* Set Capture Compare 1 and Capture Compare 2 as input. */
    qeip->tim->CCMR1 |= TIM_CCMR1_CC1S_0 | TIM_CCMR1_CC2S_0;
